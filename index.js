@@ -1,7 +1,13 @@
 
 //Essentials for login and connect.
 const discord = require('discord.js');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 const client = new discord.Client();
+
+
 //const express = require('express');
 //const http = require('http');
 
@@ -9,7 +15,7 @@ const prefix = "-";
 const efctfix = "-effect";
 const diafix = "-diamond";
 
-client.login(process.env.SECRET).catch(console.error);
+client.login(process.env.DISCORD_TOKEN).catch(console.error);
 //Glitch regular pinging.
 //It is banned so be careful
 //const alive = express();
