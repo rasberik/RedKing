@@ -1,9 +1,10 @@
 
 //Essentials for login and connect.
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const express = require('express');
-const http = require('http');
+const discord = require('discord.js');
+const client = new discord.Client();
+//const express = require('express');
+//const http = require('http');
+
 const prefix = "-";
 const efctfix = "-effect";
 const diafix = "-diamond";
