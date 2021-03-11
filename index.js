@@ -63,8 +63,7 @@ client.on('debug', console.log)
 //Basics.
 client.on("ready", () => {
   client.user.setActivity("with you");
-  console.log("Ready!")
-  
+  console.log("Ready!")  
   //This one is to check what channels are using the bot, just for informative purposes.
   //console.log(client.guilds.map(guild => guild.name + "\n").reduce((prev, guildname) => (prev) + guildname))	
   //This line is to to keep up to date emoji used in server. All of them are uploaded to discord channel by myself *(c) NonPensavo
@@ -77,7 +76,7 @@ client.on("reconnecting", () => {
     console.log(`Mecia reconnected at ${new Date()}`);
 });
 client.on("guildCreate", guild => {
-    console.log("Joined a new server: "+ guild.name +" owned by "+ guild.owner.user.username);
+    console.log("Joined a new server: "+ guild.name;
 });
 client.on("guildMemberAdd", member => {
     console.log("New member joined: "+ member.user.username +" on "+ member.guild.name);
