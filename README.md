@@ -6,6 +6,11 @@ Change Logs
 
 __To do:__ _@NonPensavo_
 - Improve assets for: `Wyrmslayer`
+- Add card `Karmic Blessing` 
+
+__March 14, 2021__ _@NonPensavo_
+- Updated Cure All status to cure Bleed
+- Updated to work as secondary bot named Red King
 
 __January 18, 2021__ _@NonPensavo_
 - Added `-warlist` command for quick reference about upcoming wars.
