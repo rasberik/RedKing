@@ -40,6 +40,7 @@ this.DiamondEffectCards = function (message, request){
 }
 
 this.DiamondElement = function (message, request){
+
 	const SortDiamond = Pack.Diamond
 	.filter(event => event.pak === "Y")
 	.filter(event => event.elmnt === request)

@@ -312,7 +312,7 @@ let EffectManager = function (){
   }
   this.effectcure = function (message){
     message.channel.send({"embed": {"title": "**Cure All**",
-    "description": "This effect removes __any and all__ of the following status effects - Shock/Burn/Chill/Poison/Confuse.",
+    "description": "This effect removes __any and all__ of the following status effects - Shock/Burn/Bleed/Chill/Poison/Confuse.",
     "thumbnail": {"url": "https://i.postimg.cc/zGgj9YTV/Cure.png"},"image": {"url": ""},
     "fields": [{"name":"Variants","value": "Cure X","inline":true}]}
   });
@@ -396,7 +396,7 @@ let EffectManager = function (){
   }
   this.effectreset = function (message){
     message.channel.send({"embed": {"title": "**Reset**",
-    "description": "On hit will reset the target currently casting card count to its __original turn count__ value. ()",
+    "description": "On hit will reset the target currently casting card count to its __original turn count__ value.",
     "thumbnail": {"url": "https://i.postimg.cc/6pf09L1X/Reset.png"},"image": {"url": ""},
     "fields": [{"name":"Notice","value": "Affected by Haste/Slow/Chill effects","inline":true}]}
   });

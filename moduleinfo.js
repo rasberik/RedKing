@@ -17,18 +17,14 @@ let InfoManager = function (){
   this.author = function(message) {
     message.channel.send({
       embed: {
-        title: "Red Queen's Original Creator",
+        title: "Original Creator",
         color: this.embedColorCode,
         fields: [
           { 
-            name: "Author:", 
+            name: "Creator:", 
             value: "M1RAG3#3091", 
             inline: true 
-          },
-          { 
-            name: "Donations are also welcome and appreciated:", 
-            value: "[paypal.me/EduardoFFBastos](https://paypal.me/EduardoFFBastos)"
-          }
+          }, { name: "Server, Maintenance and Development:", value: "NonPensavo#5458", inline: true}
         ]
       }
     });
@@ -36,7 +32,7 @@ let InfoManager = function (){
   this.info = function(message) {
     message.channel.send({
       embed: {
-        title: "Red Queen",
+        title: "Red King",
         color: this.embedColorCode,
         fields: [
           {
@@ -78,7 +74,7 @@ let InfoManager = function (){
   
   this.cards = function (message){
     message.channel.send(
-      "```I am Red Queen. Shall we play a game?" + "\n" + 
+      "```Red King Library welcomes you, stranger. " + "\n" + 
       "Type - followed by a card name and i will find it for you." + "\n" + 
       "You can use just one word for some cards with UNIQUE names such as Annoying Elves```" +      
       "**Examples** -Pumpkin Field / -Pumpkin / -Annoying / -elves" + "\n" + 
@@ -119,7 +115,7 @@ let InfoManager = function (){
   this.red = function (message){
       message.channel.send({"embed": {"title": Emoji.HFRed + " **Red**",
           "description": 
-                                      "*The Sexy dancer :dancer: she does backflips and everything*" + "\n\n" +
+                                      "*The sexy dancer :dancer: she does backflips and everything*" + "\n\n" +
                                       "***Type:** Skill* " + Emoji.ClassSkill + " :heavy_minus_sign: " +
                                       "***Element:** Fire* " + Emoji.ElementFire, "color": this.colorFire,
           "image": {"url": "https://cdn.glitch.com/c76df7c9-d06c-4f54-a07f-8e6db475835f%2FRed.jpg?v=1561758341439"},
@@ -132,7 +128,7 @@ let InfoManager = function (){
   this.fergus = function (message){
       message.channel.send({"embed": {"title": Emoji.HFFergus + " **Fergus**",
           "description": 
-                                      "*The dumb crazy raging beserker*" + "\n\n" + 
+                                      "*The dumb crazy raging berserker*" + "\n\n" + 
                                       "***Type:** Might* " + Emoji.ClassMight  + " :heavy_minus_sign: " +
                                       "***Element:** Fire* " + Emoji.ElementFire, "color": this.colorFire,
           "image": {"url": "https://cdn.glitch.com/c76df7c9-d06c-4f54-a07f-8e6db475835f%2FFergus.jpg?v=1561758339002"},

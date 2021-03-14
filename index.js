@@ -62,7 +62,7 @@ client.on('error', (err) => console.error(err));
 client.on('debug', console.log)
 //Basics.
 client.on("ready", () => {
-  client.user.setActivity("with you");
+  client.user.setActivity("your fate", { type: 'WATCHING' });
   console.log("Ready!")  
   //This one is to check what channels are using the bot, just for informative purposes.
   //console.log(client.guilds.map(guild => guild.name + "\n").reduce((prev, guildname) => (prev) + guildname))	
@@ -76,7 +76,7 @@ client.on("reconnecting", () => {
     console.log(`Mecia reconnected at ${new Date()}`);
 });
 client.on("guildCreate", guild => {
-    console.log("Joined a new server: "+ guild.name;
+    console.log("Joined a new server: "+ guild.name);
 });
 client.on("guildMemberAdd", member => {
     console.log("New member joined: "+ member.user.username +" on "+ member.guild.name);
