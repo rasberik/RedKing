@@ -133,7 +133,7 @@ client.on("message", (message) => {
     if (remainder.endsWith("brag")) {
       WarReplies.brag(message, order);
     } else
-    if (remainder.contains("list")) {
+    if (remainder.includes("list")) {
       WarReplies.upcoming(message, order);
     } else {
       WarReplies.war(message, order);
