@@ -334,7 +334,7 @@ if (command.includes (prefix+"terra")) {
     message.reply("*Multiple options found...* Specify request:\n-Terra Missile\n-Terra Sword\n-Terra Tip");
 } else
 if (command.includes (prefix+"karmic")) {
-    message.reply("*Multiple options found...* Specify request:\n-Karmic Protection\n-Karmick Kick");
+    message.reply("*Multiple options found...* Specify request:\n-Karmic Blessing\n-Karmic Protection\n-Karmick Kick");
 } else
 if (command.includes (prefix+"mead")) {
     message.reply("*Multiple options found...* Specify request:\n-Mead Gulp/ -Gulp\n-Mead Sip/ -Sip");
