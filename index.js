@@ -7,42 +7,11 @@ dotenv.config();
 
 const client = new discord.Client();
 
-
-//const express = require('express');
-//const http = require('http');
-
 const prefix = "-";
 const efctfix = "-effect";
 const diafix = "-diamond";
 
 client.login(process.env.DISCORD_TOKEN).catch(console.error);
-//Glitch regular pinging.
-//It is banned so be careful
-//const alive = express();
-//alive.get("/", (_request, response) => {
-//  response.sendStatus(200);
-//});
-//alive.listen(process.env.PORT);
-//setInterval(() => {
-//  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-//}, 4900);
-
-
-//Modules for organization.
-//let InfoManager = require('./moduleinfo.js');
-//let InfoReplies = new InfoManager(client);
-//let CardManager = require('./modulecard.js');
-//let CardReplies = new CardManager(client);
-//let PackManager = require('./modulepack.js');
-//let PackReplies = new PackManager(client);
-//let EffectManager = require('./moduleeffect.js');
-//let EffectReplies = new EffectManager(client);
-//let GuildManager = require('./moduleguild.js');
-//let GuildReplies = new GuildManager(client);
-//let RewardManager = require('./modulereward.js');
-//let RewardReplies = new RewardManager(client);
-//let WarManager = require('./modulewar.js');
-//let WarReplies = new WarManager();
 
 let InfoReplies = require('./moduleinfo.js');
 let CardReplies = require('./modulecard.js');
@@ -79,13 +48,13 @@ client.on("guildCreate", guild => {
     console.log("Joined a new server: "+ guild.name);
 });
 client.on("guildMemberAdd", member => {
-    console.log("New member joined: "+ member.user.username +" on "+ member.guild.name);
+    console.log("New member joined: "+ member.user.username + " on " + member.guild.name + "(" + member.guild.id + ")");
     //if (member.guild.id === "245331373794000897") {
     //        member.guild.channels.get("245331373794000897").send("Ahoy "+ member.user +", and welcome aboard The Black Flag! Tell our Old Salt which galleon ye be sailin’ with and they will git ye proper settled.\n"+
     //        "If ye seek advice on yer cannon fire, fair lady Siren will guide your hand.")
     //} else
-	if (member.guild.id === "714495330481078383") {
-		member.guild.channels.get("736096001290534952").send("Welcome " + member.user + " aboard Redbird Raiders flagship!")
+    if (member.guild.id === "714495330481078383") {
+	member.guild.channels.get("736096001290534952").send("Welcome " + member.user + " aboard Redbird Raiders flagship!")
     } 
 	//else      
     //if (member.guild.id === "410094738985713665") {
@@ -93,13 +62,12 @@ client.on("guildMemberAdd", member => {
     //        "In order for us to properly assign you in one of our guilds please provide us with __some information first__.\n"+
     //        "*Tell us your current **__fame level__** and the **__desired tier__** you're aiming to achieve in GWs and which guild you belong to currently if any?*")
     //} 
-	else return;
 });
 client.on("guildMemberRemove", member => {
-    if (member.guild.id === "245331373794000897") {
-        console.log("A member left: "+ member.user.username +" from "+ member.guild.name);
-        member.guild.channels.get("245331373794000897").send("Fare thee well, "+ member.user.username +", ye scurvy dog. May ye be keel hauled and yer gizzards hung from the yard arm for desertin’ the fleet.");
-    } else return;
+    //if (member.guild.id === "245331373794000897") {
+    //    console.log("A member left: "+ member.user.username +" from "+ member.guild.name);
+    //    member.guild.channels.get("245331373794000897").send("Fare thee well, "+ member.user.username +", ye scurvy dog. May ye be keel hauled and yer gizzards hung from the yard arm for desertin’ the fleet.");
+    //} else return;
 });
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix)) return;
@@ -165,8 +133,8 @@ client.on("message", (message) => {
     if (remainder.endsWith("brag")) {
       WarReplies.brag(message, order);
     } else
-    if (remainder.endsWith("list")) {
-      WarReplies.upcoming(message);
+    if (remainder.contains("list")) {
+      WarReplies.upcoming(message, order);
     } else {
       WarReplies.war(message, order);
     }
