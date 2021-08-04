@@ -35,7 +35,7 @@ this.DiamondEffectCards = function (message, request){
 	.filter(event => event.efct === request || event.efct1 === request || event.efct2 === request || event.efct3 === request || event.perk === request)
 	.sort((a,b) => (a.card > b.card) ? 1 : (b.card > a.card) ? -1 : 0)
 	.map(event => event.rar + " `" + event.card + "` " + "\n")
-	.reduce((prev, FilterEffect) => (prev) + FilterEffect)
+	.reduce((prev, FilterEffect) => (prev) + FilterEffect, "")
 	message.channel.send("Cards with requested effect are:\n" + FilterEffect);
 }
 
@@ -46,14 +46,14 @@ this.DiamondElement = function (message, request){
 	.filter(event => event.elmnt === request)
 	.filter(event => event.rar === "4:star:" || event.rar === "5:star:")
 	.map(event => event.rar + " `" + event.card + "` " + "\n")
-	.reduce((prev, SortDiamond) => (prev) + SortDiamond)
+	.reduce((prev, SortDiamond) => (prev) + SortDiamond, "")
 
 	const SortDiamondRare = Pack.Diamond
 	.filter(event => event.pak === "Y")
 	.filter(event => event.elmnt === request)
 	.filter(event => event.rar === "3:star:")
 	.map(event => event.rar + " `" + event.card + "` " + "\n")
-	.reduce((prev, SortDiamondRare) => (prev) + SortDiamondRare)
+	.reduce((prev, SortDiamondRare) => (prev) + SortDiamondRare, "")
 
 	if (request === "air") {
 		message.channel.send(Emoji.DefaultMinus + "\n" +  
@@ -113,7 +113,7 @@ const SortMontyElement = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "fire")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortMontyElement) => (prev) + SortMontyElement)
+.reduce((prev, SortMontyElement) => (prev) + SortMontyElement, "")
 this.SortMontyElement = function (message) {
 	message.channel.send("Element specific cards **Monty** " + Emoji.HFMonty + " can use:\n" + SortMontyElement)
 }
@@ -122,7 +122,7 @@ const SortMontyListing = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "fire" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortMontyListing) => (prev) + SortMontyListing)
+.reduce((prev, SortMontyListing) => (prev) + SortMontyListing, "")
 this.SortMontyListing = function (message) {
 	message.channel.send("All cards **Monty** " + Emoji.HFMonty + " can use:\n" + SortMontyListing)
 }
@@ -131,7 +131,7 @@ const SortFergusElement = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "fire")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortFergusElement) => (prev) + SortFergusElement)
+.reduce((prev, SortFergusElement) => (prev) + SortFergusElement, "")
 this.SortFergusElement = function (message) {
 	message.channel.send("Element specific cards **Fergus** " + Emoji.HFFergus + " can use:\n" + SortFergusElement)
 }
@@ -140,7 +140,7 @@ const SortFergusListing = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "fire" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortFergusListing) => (prev) + SortFergusListing)
+.reduce((prev, SortFergusListing) => (prev) + SortFergusListing, "")
 this.SortFergusListing = function (message) {
 	message.channel.send("All cards **Fergus** " + Emoji.HFFergus + " can use:\n" + SortFergusListing)
 }
@@ -150,7 +150,7 @@ const SortRedElement = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "fire")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortRedElement) => (prev) + SortRedElement)
+.reduce((prev, SortRedElement) => (prev) + SortRedElement, "")
 this.SortRedElement = function (message) {
 	message.channel.send("Element specific cards **Red** " + Emoji.HFRed + " can use:\n" + SortRedElement)
 }
@@ -159,7 +159,7 @@ const SortRedListing = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "fire" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortRedListing) => (prev) + SortRedListing)
+.reduce((prev, SortRedListing) => (prev) + SortRedListing, "")
 this.SortRedListing = function (message) {
 	message.channel.send("All cards **Red** " + Emoji.HFRed + " can use:\n" + SortRedListing)
 }
@@ -168,7 +168,7 @@ const SortTrixElement = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "earth")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortTrixElement) => (prev) + SortTrixElement)
+.reduce((prev, SortTrixElement) => (prev) + SortTrixElement, "")
 this.SortTrixElement = function (message) {
 	message.channel.send("Element specific cards **Trix** " + Emoji.HETrix + " can use:\n" + SortTrixElement)
 }
@@ -177,7 +177,7 @@ const SortTrixListing = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "earth" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortTrixListing) => (prev) + SortTrixListing);
+.reduce((prev, SortTrixListing) => (prev) + SortTrixListing, "");
   
 this.SortTrixListing = function (message) {
 	message.channel.send("All cards **Trix** " + Emoji.HETrix + " can use:\n" + SortTrixListing)
@@ -187,7 +187,7 @@ const SortThruddElement = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "earth")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortThruddElement) => (prev) + SortThruddElement)
+.reduce((prev, SortThruddElement) => (prev) + SortThruddElement, "")
 this.SortThruddElement = function (message) {
 	message.channel.send("Element specific cards **Thrudd** " + Emoji.HEThrudd + " can use:\n" + SortThruddElement)
 }
@@ -196,7 +196,7 @@ const SortThruddListing = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "earth" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortThrudListing) => (prev) + SortThrudListing)
+.reduce((prev, SortThrudListing) => (prev) + SortThrudListing, "")
 this.SortThruddListing = function (message) {
 	message.channel.send("All cards **Thrudd** " + Emoji.HEThrudd + " can use:\n" + SortThruddListing)
 }
@@ -205,7 +205,7 @@ const SortBreeElement = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "earth")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortBreeElement) => (prev) + SortBreeElement)
+.reduce((prev, SortBreeElement) => (prev) + SortBreeElement, "")
 this.SortBreeElement = function (message) {
 	message.channel.send("Element specific cards **Bree** " + Emoji.HEBree + " can use:\n" + SortBreeElement)
 }
@@ -213,7 +213,7 @@ const SortBreeListing = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "earth" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortBreeListing) => (prev) + SortBreeListing)
+.reduce((prev, SortBreeListing) => (prev) + SortBreeListing, "")
 this.SortBreeListing = function (message) {
 	message.channel.send("All cards **Bree** " + Emoji.HEBree + " can use:\n" + SortBreeListing)
 }
@@ -222,7 +222,7 @@ const SortBromElement = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "air")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortBromElement) => (prev) + SortBromElement)
+.reduce((prev, SortBromElement) => (prev) + SortBromElement, "")
 this.SortBromElement = function (message) {
 	message.channel.send("Element specific cards **Brom** " + Emoji.HABrom + " can use:\n" + SortBromElement)
 }
@@ -231,7 +231,7 @@ const SortBromListing = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "air" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortBromListing) => (prev) + SortBromListing)
+.reduce((prev, SortBromListing) => (prev) + SortBromListing, "")
 this.SortBromListing = function (message) {
 	message.channel.send("All cards **Brom** " + Emoji.HABrom + " can use:\n" + SortBromListing)
 }
@@ -240,7 +240,7 @@ const SortHawkElement = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "air")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortHawkElement) => (prev) + SortHawkElement)
+.reduce((prev, SortHawkElement) => (prev) + SortHawkElement, "")
 this.SortHawkElement = function (message) {
 	message.channel.send("Element specific cards **Hawkeye** " + Emoji.HAHawkeye + " can use:\n" + SortHawkElement)
 }
@@ -249,7 +249,7 @@ const SortHawkListing = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "air" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortHawkListing) => (prev) + SortHawkListing)
+.reduce((prev, SortHawkListing) => (prev) + SortHawkListing, "")
 this.SortHawkListing = function (message) {
 	message.channel.send("All cards **Hawkeye** " + Emoji.HAHawkeye + " can use:\n" + SortHawkListing)
 }
@@ -258,7 +258,7 @@ const SortKrellElement = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "spirit")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortKrellElement) => (prev) + SortKrellElement)
+.reduce((prev, SortKrellElement) => (prev) + SortKrellElement, "")
 this.SortKrellElement = function (message) {
 	message.channel.send("Element specific cards **Krell** " + Emoji.HSKrell + " can use:\n" + SortKrellElement)
 }
@@ -267,7 +267,7 @@ const SortKrellListing = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "spirit" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortKrellListing) => (prev) + SortKrellListing)
+.reduce((prev, SortKrellListing) => (prev) + SortKrellListing, "")
 this.SortKrellListing = function (message) {
 	message.channel.send("All cards **Krell** " + Emoji.HSKrell + " can use:\n" + SortKrellListing)
 }
@@ -276,7 +276,7 @@ const SortJinxElement = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "spirit")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortJinxElement) => (prev) + SortJinxElement)
+.reduce((prev, SortJinxElement) => (prev) + SortJinxElement, "")
 this.SortJinxElement = function (message) {
 	message.channel.send("Element specific cards **Jinx** " + Emoji.HSJinx + " can use:\n" + SortJinxElement)
 }
@@ -285,7 +285,7 @@ const SortJinxListing = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "spirit" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortJinxListing) => (prev) + SortJinxListing)
+.reduce((prev, SortJinxListing) => (prev) + SortJinxListing, "")
 this.SortJinxListing = function (message) {
 	message.channel.send("All cards **Jinx** " + Emoji.HSJinx + " can use:\n" + SortJinxListing)
 }
@@ -294,7 +294,7 @@ const SortLoganElement = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "water")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortLoganElement) => (prev) + SortLoganElement)
+.reduce((prev, SortLoganElement) => (prev) + SortLoganElement, "")
 this.SortLoganElement = function (message) {
 	message.channel.send("Element specific cards **Logan** " + Emoji.HWLogan + " can use:\n" + SortLoganElement)
 }
@@ -303,7 +303,7 @@ const SortLoganListing = Pack.Gold
 .filter(event => event.cls === "magic")
 .filter(event => event.elmnt === "water" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortLoganListing) => (prev) + SortLoganListing)
+.reduce((prev, SortLoganListing) => (prev) + SortLoganListing, "")
 this.SortLoganListing = function (message) {
 	message.channel.send("All cards **Logan** " + Emoji.HWLogan + " can use:\n" + SortLoganListing)
 }
@@ -312,7 +312,7 @@ const SortGildaElement = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "water")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortGildaElement) => (prev) + SortGildaElement)
+.reduce((prev, SortGildaElement) => (prev) + SortGildaElement, "")
 this.SortGildaElement = function (message) {
 	message.channel.send("Element specific cards **Gilda** " + Emoji.HWGilda + " can use:\n" + SortGildaElement)
 }
@@ -321,7 +321,7 @@ const SortGildaListing = Pack.Gold
 .filter(event => event.cls === "might")
 .filter(event => event.elmnt === "water" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortGildaListing) => (prev) + SortGildaListing)
+.reduce((prev, SortGildaListing) => (prev) + SortGildaListing, "")
 this.SortGildaListing = function (message) {
 	message.channel.send("All cards **Gilda** " + Emoji.HWGilda + " can use:\n" + SortGildaListing)
 }
@@ -330,7 +330,7 @@ const SortPegElement = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "water")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortPegElement) => (prev) + SortPegElement)
+.reduce((prev, SortPegElement) => (prev) + SortPegElement, "")
 this.SortPegElement = function (message) {
 	message.channel.send("Element specific cards **Peg** " + Emoji.HWPeg + " can use:\n" + SortPegElement)
 }
@@ -339,7 +339,7 @@ const SortPegListing = Pack.Gold
 .filter(event => event.cls === "skill")
 .filter(event => event.elmnt === "water" || event.elmnt === "neutral")
 .map(event => event.rar + " `" + event.card + "` " + event.rarl + "\n")
-.reduce((prev, SortPegListing) => (prev) + SortPegListing)
+.reduce((prev, SortPegListing) => (prev) + SortPegListing, "")
 this.SortPegListing = function (message) {
 	message.channel.send("All cards **Peg** " + Emoji.HWPeg + " can use:\n" + SortPegListing)
 }
@@ -351,7 +351,7 @@ const SortAirPack = Pack.Gold
 .filter(event => event.elmnt === "air")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " + "\n")
-.reduce((prev, SortAirPack) => (prev) + SortAirPack)
+.reduce((prev, SortAirPack) => (prev) + SortAirPack, "")
 this.SortAirElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalAir + " Air Elemental pack:** " + "\n"  +                       
@@ -365,7 +365,7 @@ const SortEarthPack = Pack.Gold
 .filter(event => event.elmnt === "earth")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " + "\n")
-.reduce((prev, SortEarthPack) => (prev) + SortEarthPack)
+.reduce((prev, SortEarthPack) => (prev) + SortEarthPack, "")
 this.SortEarthElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalEarth + " Earth Elemental pack:** " + "\n"  +
@@ -379,7 +379,7 @@ const SortFirePack = Pack.Gold
 .filter(event => event.elmnt === "fire")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " + "\n")
-.reduce((prev, SortFirePack) => (prev) + SortFirePack)
+.reduce((prev, SortFirePack) => (prev) + SortFirePack, "")
 this.SortFireElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalFire + " Fire Elemental pack:** " + "\n"  +
@@ -393,7 +393,7 @@ const SortSpiritPack = Pack.Gold
 .filter(event => event.elmnt === "spirit")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " + "\n")
-.reduce((prev, SortSpiritPack) => (prev) + SortSpiritPack)
+.reduce((prev, SortSpiritPack) => (prev) + SortSpiritPack, "")
 this.SortSpiritElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalSpirit + " Spirit Elemental pack:** " + "\n"  +
@@ -407,7 +407,7 @@ const SortWaterPack = Pack.Gold
 .filter(event => event.elmnt === "water")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " + "\n")
-.reduce((prev, SortWaterPack) => (prev) + SortWaterPack)
+.reduce((prev, SortWaterPack) => (prev) + SortWaterPack, "")
 this.SortWaterElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalWater + " Water Elemental pack:** " + "\n"  + 
@@ -421,7 +421,7 @@ const SortNeutralPack = Pack.Gold
 .filter(event => event.elmnt === "neutral")
 .filter(event => event.rar === "3:star:" || event.rar === "4:star:")
 .map(event => event.rar + " `" + event.card + "` " +  "\n")
-.reduce((prev, SortNeutralPack) => (prev) + SortNeutralPack)
+.reduce((prev, SortNeutralPack) => (prev) + SortNeutralPack, "")
 this.SortNeutralElement = function (message) {
 	message.channel.send(Emoji.DefaultMinus + "\n" + 
                        "**Cards available in " + Emoji.CrystalNeutral + " Neutral Elemental pack:** " + "\n"  + 
