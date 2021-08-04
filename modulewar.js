@@ -159,11 +159,11 @@ let WarManager = function(){
     return '' + y + '.' + (m <= 9 ? '0' + m : m) + '.' + (d <= 9 ? '0' + d : d);
   }
   
-  this.upcoming = function (message, order = 0) {
+  this.upcoming = function (message, order) {
     //Single embed field can hold up to 1024 characters, where most of it taken by Emoji. Dont exceed limit. 
     //16 shows 915/740 and 10: 569/465 characters (for that moments order)
     var totalShow = 16;
-    
+    console.log("ORDER: " + order)
     var warCount = Schedule.length;
     var diff = message.createdTimestamp - zeroTimestamp;
     var weeksPassed = Math.floor((diff+weekDuration-warDuration) / weekDuration);    
