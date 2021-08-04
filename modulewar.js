@@ -173,7 +173,7 @@ let WarManager = function(){
     
     var newline = "\n";
     
-    var firstHalf = upcomingWars.map(war => "`" + ((war.order - startOrder) + warCount) % warCount + (totalShow * order) + ".` " + getRewardInfo(war.reward).classemoji + "**`" + war.reward + "`** " + newline).reduce((prev, warInfo) => (prev) + warInfo)    
+    var firstHalf = upcomingWars.map(war => "`" + ((((war.order - startOrder) + warCount) % warCount) + (totalShow * order)) + ".` " + getRewardInfo(war.reward).classemoji + "**`" + war.reward + "`** " + newline).reduce((prev, warInfo) => (prev) + warInfo)    
     var secondHalf = upcomingWars.map(war => getRewardInfo(war.card).classemoji + "`" + war.card  + "`" + newline).reduce((prev, bragInfo) => (prev) + bragInfo)
     //console.log(firstHalf.length)
     //console.log(secondHalf.length)
