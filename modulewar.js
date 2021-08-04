@@ -84,7 +84,7 @@ let WarManager = function(){
     {order: 33, condition: 8, card: "Cornholio", reward: "Channeling Chi" },
     {order: 34, condition: 1, card: "Salamander Skin", reward: "Rain Of Fire" },
     {order: 35, condition: 14, card: "Whispering Blade", reward: "The Spice" },
-    {order: 36, condition: 3, card: "Great Ball of Fire", reward: "Holy Shower" },
+    {order: 36, condition: 3, card: "Great Ball Of Fire", reward: "Holy Shower" },
     {order: 37, condition: 1, card: "Vigilant Shield", reward: "Sharp Tongue" },
     {order: 38, condition: 15, card: "Mark of Vengeance", reward: "Bearded Hatchet" },
     {order: 39, condition: 20, card: "Perfect Cut", reward: "Hard Luck" },
@@ -159,7 +159,7 @@ let WarManager = function(){
     return '' + y + '.' + (m <= 9 ? '0' + m : m) + '.' + (d <= 9 ? '0' + d : d);
   }
   
-  this.upcoming = function (message) {
+  this.upcoming = function (message, order = 0) {
     //Single embed field can hold up to 1024 characters, where most of it taken by Emoji. Dont exceed limit. 
     //16 shows 915/740 and 10: 569/465 characters (for that moments order)
     var totalShow = 16;
@@ -167,13 +167,13 @@ let WarManager = function(){
     var warCount = Schedule.length;
     var diff = message.createdTimestamp - zeroTimestamp;
     var weeksPassed = Math.floor((diff+weekDuration-warDuration) / weekDuration);    
-    var startOrder = ((weeksPassed % warCount) + warCount) % warCount;
+    var startOrder = ((weeksPassed % warCount) + warCount + (totalShow * order)) % warCount;
     
     var upcomingWars = Schedule.filter(war => ((war.order - startOrder) + warCount) % warCount < totalShow)
     
     var newline = "\n";
     
-    var firstHalf = upcomingWars.map(war => "`" + ((war.order - startOrder) + warCount) % warCount + ".` " + getRewardInfo(war.reward).classemoji + "**`" + war.reward + "`** " + newline).reduce((prev, warInfo) => (prev) + warInfo)    
+    var firstHalf = upcomingWars.map(war => "`" + ((war.order - startOrder) + warCount) % warCount + (totalShow * order) + ".` " + getRewardInfo(war.reward).classemoji + "**`" + war.reward + "`** " + newline).reduce((prev, warInfo) => (prev) + warInfo)    
     var secondHalf = upcomingWars.map(war => getRewardInfo(war.card).classemoji + "`" + war.card  + "`" + newline).reduce((prev, bragInfo) => (prev) + bragInfo)
     //console.log(firstHalf.length)
     //console.log(secondHalf.length)
