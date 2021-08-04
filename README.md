@@ -1,5 +1,8 @@
-Red Queen Project
+Red King Project
 ===========================================
+This is an auxillary discord bot project in Node.JS for BattleHand mobile game.
+
+If you want to invite the bot to your server, use [this link](https://discord.com/api/oauth2/authorize?client_id=819491368174485515&permissions=67584&scope=bot), you will need Administrator access to your discord channel.
 
 Change Logs
 -------------------------------------------
@@ -91,11 +94,12 @@ __November 22, 2020__ _@NonPensavo_
 __Future Ideas:__  _@NonPensavo_
 - Add war schedule and request them by `-next`,`-next N` or `-last` 
 
-Glitch Project Info
+Project Info
 -------------------------------------------
 
-On the back-end:
-- your app starts at `server.js`
+Original idea of the project code belong to M1RAGE.
+
+On the back-end
 - add frameworks and packages in `package.json`
 - safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
