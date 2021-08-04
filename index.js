@@ -134,7 +134,10 @@ client.on("message", (message) => {
       WarReplies.brag(message, order);
     } else
     if (remainder.includes("list")) {
-      WarReplies.upcoming(message, order);
+	    let secondRemainder = remainder.slice(4);
+	    var listOrder = parseInt(secondRemainder);
+	    if (listOrder === undefined || listOrder === null || isNaN(listOrder)) { listOrder = 0; }
+      WarReplies.upcoming(message, listOrder);
     } else {
       WarReplies.war(message, order);
     }
