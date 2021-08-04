@@ -169,7 +169,7 @@ let WarManager = function(){
     var weeksPassed = Math.floor((diff+weekDuration-warDuration) / weekDuration);    
     var startOrder = ((weeksPassed % warCount) + warCount + (totalShow * order)) % warCount;
     
-    var upcomingWars = Schedule.filter(war => ((war.order - startOrder) + warCount) % warCount < totalShow)
+    var upcomingWars = Schedule.filter(war => ((war.order - startOrder) + warCount) % warCount < totalShow).sort((a, b) => (((a.order - startOrder) + warCount) % warCount) - (((b.order - startOrder) + warCount) % warCount))
     
     var newline = "\n";
     
