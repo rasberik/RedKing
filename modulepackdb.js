@@ -70,7 +70,7 @@ module.exports = {
         {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"2", pak:"Y", brag:"N", card:"Channeling Chi", elmnt:"water"},
         {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"2", pak:"Y", brag:"N", card:"Easter Eggs", elmnt:"water"},
         {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"1", pak:"Y", brag:"N", card:"Meditation", elmnt:"water"},
-        {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"3", pak:"Y", brag:"N", card:"Monk Fu", elmnt:"water"},
+        {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"3", pak:"Y", brag:"N", card:"Monk-Fu", elmnt:"water"},
         {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"2", pak:"Y", brag:"N", card:"Smelling Salts", elmnt:"water"},
         {cls:"magic", rar:"4:star:", rarl:":star2:", trn:"2", pak:"Y", brag:"N", card:"Quivering Sole", elmnt:"water"},
         {cls:"might", rar:"4:star:", rarl:":star2:", trn:"5", pak:"Y", brag:"N", card:"Deep Breath", elmnt:"water"},
